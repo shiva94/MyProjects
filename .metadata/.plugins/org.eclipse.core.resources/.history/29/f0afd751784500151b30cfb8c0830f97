@@ -1,0 +1,14 @@
+package webservice;
+
+import javax.jws.WebService;
+
+@WebService(endpointInterface= "webservice.HelloWorld")
+public class HelloWorldImpl implements HelloWorld {
+
+	@Override
+	public String greetings(String name) {
+		
+		return "Hello "+ name;
+	}
+
+}

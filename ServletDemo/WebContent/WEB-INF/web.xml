@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.day13.Hello</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>second</servlet-name>
+    <servlet-class>com.day13.Second</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>second</servlet-name>
+    <url-pattern>/sec</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>value</param-name>
+    <param-value>Project Training</param-value>
+  </context-param>
+</web-app>

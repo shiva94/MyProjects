@@ -1,0 +1,5 @@
+package webservice;
+
+public class HelloWorldImpl implement HelloWorld {
+
+}

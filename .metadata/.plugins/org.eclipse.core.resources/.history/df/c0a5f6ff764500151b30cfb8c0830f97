@@ -1,0 +1,11 @@
+package webservice;
+
+import javax.xml.ws.Endpoint;
+
+public class HelloWorldPublisher {
+	public static void main(String args[])
+	{
+		Endpoint.publish("http:localhost:1521/webservice/greet",new HelloWorldImpl());
+		
+	}
+}

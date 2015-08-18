@@ -1,0 +1,12 @@
+package billing;
+
+public class BillAmtImpl implements BillAmt{
+
+	@Override
+	public int disAmt(float a, float b) {
+		// TODO Auto-generated method stub
+		return (a*b)/100;
+	}
+	
+
+}

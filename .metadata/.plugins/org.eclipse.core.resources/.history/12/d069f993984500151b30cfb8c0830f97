@@ -1,0 +1,10 @@
+package billing;
+
+import javax.jws.WebService;
+
+@WebService
+
+public interface BillAmt {
+
+	public int disAmt(float a, float b);
+}
