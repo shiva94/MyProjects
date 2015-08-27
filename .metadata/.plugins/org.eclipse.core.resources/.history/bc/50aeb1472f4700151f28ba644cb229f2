@@ -1,0 +1,6 @@
+package com.suspendRestore;
+
+public interface SuspendRestoreDAO {
+	public void getDBConnection();
+	public void closeDBConnection();
+}

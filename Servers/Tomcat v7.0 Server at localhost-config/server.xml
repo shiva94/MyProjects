@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8512" shutdown="SHUTDOWN">
+ --><Server port="8080" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -62,7 +62,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL HTTP/1.1 Connector on port 8513
     -->
-    <Connector connectionTimeout="20000" port="8513" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8800" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -82,7 +82,7 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8514 -->
-    <Connector port="8514" protocol="AJP/1.3" redirectPort="8443"/>
+    <Connector port="8500" protocol="AJP/1.3" redirectPort="8443"/>
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="Assign" path="/Assign" reloadable="true" source="org.eclipse.jst.jee.server:Assign"/><Context docBase="ServletDemo" path="/ServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ServletDemo"/><Context docBase="ServDemo1" path="/ServDemo1" reloadable="true" source="org.eclipse.jst.jee.server:ServDemo1"/><Context docBase="verizonspringmvc" path="/verizonspringmvc" reloadable="true" source="org.eclipse.jst.jee.server:verizonspringmvc"/><Context docBase="VerizonAjax" path="/VerizonAjax" reloadable="true" source="org.eclipse.jst.jee.server:VerizonAjax"/><Context docBase="Billing" path="/Billing" reloadable="true" source="org.eclipse.jst.jee.server:Billing"/></Host>
+      <Context docBase="Assign" path="/Assign" reloadable="true" source="org.eclipse.jst.jee.server:Assign"/><Context docBase="ServletDemo" path="/ServletDemo" reloadable="true" source="org.eclipse.jst.jee.server:ServletDemo"/><Context docBase="ServDemo1" path="/ServDemo1" reloadable="true" source="org.eclipse.jst.jee.server:ServDemo1"/><Context docBase="verizonspringmvc" path="/verizonspringmvc" reloadable="true" source="org.eclipse.jst.jee.server:verizonspringmvc"/><Context docBase="VerizonAjax" path="/VerizonAjax" reloadable="true" source="org.eclipse.jst.jee.server:VerizonAjax"/><Context docBase="Billing" path="/Billing" reloadable="true" source="org.eclipse.jst.jee.server:Billing"/><Context docBase="SelfServiceSales" path="/SelfServiceSales" reloadable="true" source="org.eclipse.jst.jee.server:SelfServiceSales"/><Context docBase="Date" path="/Date" reloadable="true" source="org.eclipse.jst.jee.server:Date"/><Context docBase="PaymentSystem" path="/PaymentSystem" reloadable="true" source="org.eclipse.jst.jee.server:PaymentSystem"/><Context docBase="SelfServiceSales1" path="/SelfServiceSales1" reloadable="true" source="org.eclipse.jst.jee.server:SelfServiceSales1"/><Context docBase="SuspendRestore" path="/SuspendRestore" reloadable="true" source="org.eclipse.jst.jee.server:SuspendRestore"/></Host>
     </Engine>
   </Service>
 </Server>

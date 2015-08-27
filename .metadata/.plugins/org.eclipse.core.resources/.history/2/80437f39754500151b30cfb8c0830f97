@@ -1,5 +1,0 @@
-package webservice;
-
-public interface HelloWorld {
-	public String greetings(String name);
-}

@@ -1,0 +1,65 @@
+package com.suspendRestore;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Suspend
+ */
+@WebServlet("/Suspend")
+public class Suspend extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private Connection con;
+	private ResultSet rs;
+	private PreparedStatement pst;
+	private PrintWriter writer;
+	private Statement smt;
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void getDBConnection(){
+		try{
+			Class.forName("oracle.jdbc.OracleDriver");
+			String url="jdbc:oracle:thin:@localhost:1521:orcl";
+			con=DriverManager.getConnection(url,"scott","tiger");
+		}catch(ClassNotFoundException | SQLException e){
+			e.printStackTrace();
+		}
+	}
+	protected void closeDBConnection(){
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		getDBConnection();
+		String query="select * from services where isSuspended like 'n'";
+		try {
+			pst=con.prepareStatement(query);
+			rs=pst.executeQuery();
+			writer=response.getWriter();
+			while(rs.next()){
+				writer.println((rs.getString(1))+"\n");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			closeDBConnection();
+		}
+	}
+
+}

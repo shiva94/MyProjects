@@ -1,0 +1,5 @@
+package com.suspendRestore;
+
+public class SuspendRestoreDAO {
+
+}

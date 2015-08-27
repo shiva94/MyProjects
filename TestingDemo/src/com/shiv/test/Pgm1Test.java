@@ -45,6 +45,8 @@ public class Pgm1Test {
 	{
 		//Pgm1 p= new Pgm1();
 		assertEquals(2,p.sub(5,3));
+		assertSame(1, 2);
+		assert
 	}
 
 }

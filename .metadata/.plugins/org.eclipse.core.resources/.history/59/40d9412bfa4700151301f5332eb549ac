@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="form">
+<h1 class="vzh1">Hello</h1>
+<input type="text" class="vztextarea" name="text">
+<input type="submit" value="suspend" class="vzbtn1"  >
+</form>
+</body>
+</html>

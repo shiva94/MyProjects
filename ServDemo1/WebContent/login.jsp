@@ -12,6 +12,7 @@
 Name: <input type="text" name="name"><br>
 Password: <input type="password" name="pwd"><br>
 <input type="submit" >
+
 </form>
 </body>
 </html>
